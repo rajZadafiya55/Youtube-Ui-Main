@@ -4,10 +4,11 @@ import { lazy } from 'react';
 import Loadable from 'ui-component/Loadable';
 import MinimalLayout from 'layout/MinimalLayout';
 
+
 // login option 3 routing
 const AuthLogin3 = Loadable(lazy(() => import('views/pages/authentication/authentication3/Login3')));
 const AuthRegister3 = Loadable(lazy(() => import('views/pages/authentication/authentication3/Register3')));
-const ChangePassword = Loadable(lazy(() => import('views/pages/authentication/auth-forms/ChangePassword')));
+const ChangePwd = Loadable(lazy(() => import('views/pages/authentication/authentication3/ChangePwd')));
 
 // ==============================|| AUTHENTICATION ROUTING ||============================== //
 
@@ -25,7 +26,7 @@ const AuthenticationRoutes = {
     },
     {
       path: '/pages/login/changePassword',
-      element: <ChangePassword />
+      element: <ChangePwd />
     }
   ]
 };

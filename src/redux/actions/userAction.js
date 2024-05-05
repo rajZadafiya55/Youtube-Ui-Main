@@ -22,6 +22,12 @@ const InvalidToastMessage = () => {
   });
 };
 
+const ChangePwdToastMessage = () => {
+  toast.success('Change Password successfully', {
+    position: 'top-right'
+  });
+};
+
 const addUser = () => ({
   type: NEW_REGISTRATION
 });
@@ -83,13 +89,21 @@ const changePwd = () => ({
   type: CHANGE_PASSWORD
 });
 
-export const changePassword = (data) => {
+export const changePassword = (data, navigate) => {
   return (dispatch) => {
     axios
       .post(`${APIHttp}users/change-password`, data)
       .then((res) => {
         console.log('pwd', res.data.data);
         dispatch(changePwd);
+
+        if (res.data.success === true) {
+          ChangePwdToastMessage();
+          navigate('/pages/login/login3');
+        } else {
+          InvalidToastMessage();
+          navigate('/pages/login/changePassword');
+        }
       })
       .catch((err) => {
         console.log(err);
