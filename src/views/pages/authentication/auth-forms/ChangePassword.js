@@ -24,7 +24,7 @@ const ChangePassword = ({ ...others }) => {
   const dispatch = useDispatch();
   const theme = useTheme();
   const scriptedRef = useScriptRef();
- 
+
   const [showPassword, setShowPassword] = useState(false);
   const handleClickShowPassword = () => {
     setShowPassword(!showPassword);

@@ -2,7 +2,7 @@ import React, { useEffect, useState } from 'react';
 import { Card, CardContent, Grid, Typography, IconButton, Avatar } from '@mui/material';
 import { ThumbUpOutlined, ThumbDownOutlined, ShareOutlined, SaveAltOutlined, MoreVertOutlined } from '@mui/icons-material';
 import { useDispatch, useSelector } from 'react-redux';
-import { getAllLikedVideos } from '../../redux/actions/LikeAction';
+import { getAllLikedVideos } from '../../redux/actions/likeAction';
 
 const LikeVideos = () => {
   const dispatch = useDispatch();

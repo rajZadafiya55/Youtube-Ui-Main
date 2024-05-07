@@ -115,6 +115,7 @@ const FirebaseRegister = ({ ...others }) => {
     setRegister({ ...register, coverImage: e.target.files[0] }); // update the coverImage field in the register state
   };
 
+  console.log('register data', register);
   return (
     <>
       <Grid container direction="column" justifyContent="center" spacing={2}>
