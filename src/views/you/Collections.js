@@ -27,7 +27,7 @@ import {
 import { useDispatch, useSelector } from 'react-redux';
 import { getAllChannelVideos } from '../../redux/actions/dashboardAction';
 import UploadVideoModal from './UploadVideoModal';
-import { deleteVideoDetails } from '../../redux/actions/videoAction';
+import { addVideoData, deleteVideoDetails } from '../../redux/actions/videoAction';
 
 // table
 const columns = [
@@ -105,9 +105,8 @@ const Collections = () => {
   };
 
   const handleUploadSubmit = (formData) => {
-    // Handle the upload action here
     console.log('Form Data:', formData);
-    // Dispatch action to upload video
+    dispatch(addVideoData(formData));
   };
 
   // delete video function

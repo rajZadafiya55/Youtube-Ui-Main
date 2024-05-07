@@ -2,11 +2,8 @@
 import React, { useState } from 'react';
 import { Modal, Typography, TextField, Button, Box, FilledInput } from '@mui/material';
 // import CloudUploadIcon from '@mui/icons-material/CloudUpload';
-import { useDispatch } from 'react-redux';
-import { addVideoData } from '../../redux/actions/videoAction';
 
 const UploadVideoModal = ({ open, onClose, onSubmit }) => {
-  const dispatch = useDispatch();
   const [formData, setFormData] = useState({
     title: '',
     description: '',
@@ -35,13 +32,8 @@ const UploadVideoModal = ({ open, onClose, onSubmit }) => {
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    if (!formData.videoFile) {
-      setErrors({ ...errors, videoFile: 'Video file is required' });
-      return;
-    }
     if (validateForm()) {
       onSubmit(formData);
-      dispatch(addVideoData(formData));
       onClose();
       setFormData({
         title: '',
